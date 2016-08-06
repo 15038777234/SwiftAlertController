@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SwiftAlertController"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "This is the Swift support UIAlertView and UIAlertController version of third-party libraries"
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "SwiftAlertController/SwiftAlertController", "SwiftAlertController/**/*.{swift}"
+  s.source_files  = "SwiftAlertController/SwiftAlertController", "SwiftAlertController/SwiftAlertController/SwiftAlertController/**/*.{swift}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
