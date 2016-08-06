@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "SwiftAlertController"
-  s.version      = "1.0.2.1"
+  s.version      = "1.0.4"
   s.summary      = "This is the Swift support UIAlertView and UIAlertController version of third-party libraries"
   s.description  = <<-DESC
   This is the Swift support UIAlertView and UIAlertController version of third-party libraries(这是支持UIAlertView和UIAlertController 的Swift 版本的第三方库)
