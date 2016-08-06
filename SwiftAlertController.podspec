@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "SwiftAlertController"
   s.version      = "0.0.1"
-  s.summary      = "This is the Swift support UIAlertView and UIAlertController version of third-party libraries(这是支持UIAlertView和UIAlertController 的Swift 版本的第三方库)"
+  s.summary      = "This is the Swift support UIAlertView and UIAlertController version of third-party libraries"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,6 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  This is the Swift support UIAlertView and UIAlertController version of third-party libraries(这是支持UIAlertView和UIAlertController 的Swift 版本的第三方库)
   This is the Swift support UIAlertView and UIAlertController version of third-party libraries(这是支持UIAlertView和UIAlertController 的Swift 版本的第三方库)
                    DESC
 
