@@ -12,7 +12,7 @@
 		5D8BAD4F1D55B88500D38286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D8BAD4D1D55B88500D38286 /* Main.storyboard */; };
 		5D8BAD511D55B88500D38286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D8BAD501D55B88500D38286 /* Assets.xcassets */; };
 		5D8BAD541D55B88500D38286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D8BAD521D55B88500D38286 /* LaunchScreen.storyboard */; };
-		5D8BAD601D55F2D900D38286 /* SwiftAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BAD5F1D55F2D900D38286 /* SwiftAlertController.swift */; };
+		5D8BAD631D55F86A00D38286 /* SwiftAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BAD621D55F86A00D38286 /* SwiftAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		5D8BAD501D55B88500D38286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D8BAD531D55B88500D38286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D8BAD551D55B88500D38286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D8BAD5F1D55F2D900D38286 /* SwiftAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAlertController.swift; sourceTree = "<group>"; };
+		5D8BAD621D55F86A00D38286 /* SwiftAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftAlertController.swift; path = ../../../Classes/SwiftAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 		5D8BAD5B1D55B8E800D38286 /* SwiftAlertController */ = {
 			isa = PBXGroup;
 			children = (
-				5D8BAD5F1D55F2D900D38286 /* SwiftAlertController.swift */,
+				5D8BAD621D55F86A00D38286 /* SwiftAlertController.swift */,
 			);
 			path = SwiftAlertController;
 			sourceTree = "<group>";
@@ -147,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D8BAD4C1D55B88500D38286 /* ViewController.swift in Sources */,
-				5D8BAD601D55F2D900D38286 /* SwiftAlertController.swift in Sources */,
+				5D8BAD631D55F86A00D38286 /* SwiftAlertController.swift in Sources */,
 				5D8BAD4A1D55B88500D38286 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

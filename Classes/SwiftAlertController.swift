@@ -4,12 +4,12 @@
 //
 //  Created by 张行 on 16/8/6.
 //  Copyright © 2016年 张行. All rights reserved.
-//
+//  1.0.5
 
 import UIKit
 
 /// 样式(style)
-enum  SwiftAlertControllerStyle{
+public enum  SwiftAlertControllerStyle{
     // 弹出框(AlertView)
     case alertView
     // 选择框(ActionSheet)
@@ -17,18 +17,18 @@ enum  SwiftAlertControllerStyle{
 }
 
 // 按钮的类型(The type of button)
-enum SwiftAlertControllerButtonIndexType:Int {
+public enum SwiftAlertControllerButtonIndexType:Int {
     case cannel = 0
 }
 
 // 点击按钮的回掉(Click on the button back off)
-typealias SwiftAlertControllerComplete = (alertController:SwiftAlertController) -> Void
+public typealias SwiftAlertControllerComplete = (alertController:SwiftAlertController) -> Void
 
 // 管理 托管SwiftAlertController类 防止局部变量被释放(Management managed SwiftAlertController class To prevent local variables is released)
 var SwiftAlertControllerMangers:[SwiftAlertController] = [SwiftAlertController]()
 
 @available(iOS 8.0, * )
-class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
+public class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
 
 //    /// 只能内部初始化 支持iOS8之前的UIAlertView(Only internal initialized before support iOS8 UIAlertView)
 //    private(set) var alertView:UIAlertView?
@@ -37,7 +37,7 @@ class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
 
     @available(iOS 8.0, *)
     /// 只能内部初始化 支持iOS8之后的UIAlertController(After initialization only internal support iOS8 UIAlertController)
-    var alertController:UIAlertController? {
+    public var alertController:UIAlertController? {
         get{
             return _alertController as? UIAlertController
         }set {
@@ -47,7 +47,7 @@ class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
     // 为了解决高版本属性在低版本抱错的BUG 详情->https://openradar.appspot.com/22020542 (In order to solve the high version attribute in the low version error of bugs - > https://openradar.appspot.com/22020542 for details)
     private var _alertController:AnyObject?
     // 当前点击按钮的tag(The tag of the current click on the button)
-    private(set) var currentClickButtonIndex:Int = 0
+    public private(set) var currentClickButtonIndex:Int = 0
     // 点击的回掉(Click on the back off)
     private var clickComplete:SwiftAlertControllerComplete?
     // 储存按钮的标题(The title of the store button)
@@ -62,7 +62,7 @@ class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
      cannelButton:取消按钮 没有默认为Cannel(CannelButton: cancel button There is no default for the Cannel)
      otherButtons:其他按钮的数组(An array of otherButtons: other buttons)
      */
-   convenience init(style:SwiftAlertControllerStyle, title:String?, message:String?, cannelButton:String? = "Cannel", otherButtons:[String]?) {
+   public convenience init(style:SwiftAlertControllerStyle, title:String?, message:String?, cannelButton:String? = "Cannel", otherButtons:[String]?) {
         self.init()
         self.alertControllerStyle = style
 //        if #available(iOS 8.0, *) {
@@ -133,7 +133,7 @@ class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
      controller:展示在哪个试图上面(Controller: show in which attempt to the above)
      complete:完成的回掉(Complete: back off)
     */
-    func showAlertController(controller:UIViewController?,complete:SwiftAlertControllerComplete?){
+    public func showAlertController(controller:UIViewController?,complete:SwiftAlertControllerComplete?){
         self.clickComplete = complete
         SwiftAlertControllerMangers.append(self)
         var showController:UIViewController? = controller
@@ -155,13 +155,13 @@ class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
 
 
     //MARK:UIActionSheetDelegate
-    @objc func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    @objc public func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         actionSheet.dismissWithClickedButtonIndex(buttonIndex, animated: true)
         self.dismiss(buttonIndex)
     }
 
     //MARK:UIActionSheetDelegate
-    @objc func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    @objc public func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         alertView.dismissWithClickedButtonIndex(buttonIndex, animated: true)
         self.dismiss(buttonIndex)
     }
