@@ -27,13 +27,13 @@ typealias SwiftAlertControllerComplete = (alertController:SwiftAlertController) 
 // 管理 托管SwiftAlertController类 防止局部变量被释放(Management managed SwiftAlertController class To prevent local variables is released)
 var SwiftAlertControllerMangers:[SwiftAlertController] = [SwiftAlertController]()
 
-
+@available(iOS 8.0, * )
 class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
 
-    /// 只能内部初始化 支持iOS8之前的UIAlertView(Only internal initialized before support iOS8 UIAlertView)
-    private(set) var alertView:UIAlertView?
-    /// 只能内部初始化 支持iOS8之前的UIActionSheet(Only internal initialized before support iOS8 UIActionSheet)
-    private(set) var actionSheet:UIActionSheet?
+//    /// 只能内部初始化 支持iOS8之前的UIAlertView(Only internal initialized before support iOS8 UIAlertView)
+//    private(set) var alertView:UIAlertView?
+//    /// 只能内部初始化 支持iOS8之前的UIActionSheet(Only internal initialized before support iOS8 UIActionSheet)
+//    private(set) var actionSheet:UIActionSheet?
 
     @available(iOS 8.0, *)
     /// 只能内部初始化 支持iOS8之后的UIAlertController(After initialization only internal support iOS8 UIAlertController)
@@ -65,7 +65,7 @@ class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
    convenience init(style:SwiftAlertControllerStyle, title:String?, message:String?, cannelButton:String? = "Cannel", otherButtons:[String]?) {
         self.init()
         self.alertControllerStyle = style
-        if #available(iOS 8.0, *) {
+//        if #available(iOS 8.0, *) {
             // 支持8.0以上
             var _style:UIAlertControllerStyle?
             switch style {
@@ -90,43 +90,43 @@ class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
             }
 
 
-        }else {
-
-            switch style {
-            case .actionSheet:
-                self.actionSheet = UIActionSheet()
-                self.actionSheet!.delegate = self
-                if title != nil {
-                    self.actionSheet!.title = title!
-                }
-                self.actionSheet!.addButtonWithTitle(cannelButton!)
-                self.actionSheet!.cancelButtonIndex = 0
-                if otherButtons != nil {
-                    for buttonTitle in otherButtons! {
-                        self.actionSheet!.addButtonWithTitle(buttonTitle)
-                    }
-                }
-
-            case .alertView:
-                self.alertView = UIAlertView()
-                self.alertView?.delegate = self
-                if title != nil {
-                    self.alertView!.title = title!
-                }
-                if message != nil {
-                    self.alertView!.message = message!
-                }
-
-                self.alertView!.addButtonWithTitle(cannelButton!)
-                self.alertView!.cancelButtonIndex = 0
-                if otherButtons != nil {
-                    for buttonTitle in otherButtons! {
-                        self.alertView!.addButtonWithTitle(buttonTitle)
-                    }
-                }
-            }
-
-        }
+//        }else {
+//
+//            switch style {
+//            case .actionSheet:
+//                self.actionSheet = UIActionSheet()
+//                self.actionSheet!.delegate = self
+//                if title != nil {
+//                    self.actionSheet!.title = title!
+//                }
+//                self.actionSheet!.addButtonWithTitle(cannelButton!)
+//                self.actionSheet!.cancelButtonIndex = 0
+//                if otherButtons != nil {
+//                    for buttonTitle in otherButtons! {
+//                        self.actionSheet!.addButtonWithTitle(buttonTitle)
+//                    }
+//                }
+//
+//            case .alertView:
+//                self.alertView = UIAlertView()
+//                self.alertView?.delegate = self
+//                if title != nil {
+//                    self.alertView!.title = title!
+//                }
+//                if message != nil {
+//                    self.alertView!.message = message!
+//                }
+//
+//                self.alertView!.addButtonWithTitle(cannelButton!)
+//                self.alertView!.cancelButtonIndex = 0
+//                if otherButtons != nil {
+//                    for buttonTitle in otherButtons! {
+//                        self.alertView!.addButtonWithTitle(buttonTitle)
+//                    }
+//                }
+//            }
+//
+//        }
     }
     /*
      展示弹出框(Show pop-up)
@@ -141,16 +141,16 @@ class SwiftAlertController:NSObject,UIActionSheetDelegate,UIAlertViewDelegate {
             showController = UIApplication.sharedApplication().keyWindow?.rootViewController
         }
         assert(showController != nil, "showAlertController 之前请确保KeyWindow.rootViewController有值(Please ensure before showAlertController KeyWindow. RootViewController has value)")
-        if #available(iOS 8.0, *) {
+//        if #available(iOS 8.0, *) {
             showController!.presentViewController(self.alertController!, animated: true, completion: nil)
-        }else {
-            switch self.alertControllerStyle {
-            case .alertView:
-                self.alertView!.show()
-            case .actionSheet:
-                self.actionSheet!.showInView(showController!.view)
-            }
-        }
+//        }else {
+//            switch self.alertControllerStyle {
+//            case .alertView:
+//                self.alertView!.show()
+//            case .actionSheet:
+//                self.actionSheet!.showInView(showController!.view)
+//            }
+//        }
     }
 
 

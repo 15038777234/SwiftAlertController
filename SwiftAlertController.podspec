@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SwiftAlertController"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "This is the Swift support UIAlertView and UIAlertController version of third-party libraries"
 
   # This description is used to generate tags and improve search results.
