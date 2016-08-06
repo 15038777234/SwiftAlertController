@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SwiftAlertController"
-  s.version      = "0.0.1"
+  s.version      = "1.0.0"
   s.summary      = "This is the Swift support UIAlertView and UIAlertController version of third-party libraries"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/15038777234/SwiftAlertController.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/15038777234/SwiftAlertController.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
